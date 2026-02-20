@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Only For Yuv ❤️</title>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background: linear-gradient(135deg,#000000,#2b0000);
+color:white;
+overflow-x:hidden;
+}
+
+/* Full screen sections */
+.section{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+
+/* BIG TEXT */
+h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+p{
+font-size:32px;
+max-width:900px;
+line-height:1.5;
+margin-bottom:30px;
+}
+
+/* Buttons */
+button{
+padding:20px 50px;
+font-size:28px;
+border:none;
+border-radius:50px;
+background:#ff1a1a;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff4d4d;
+transform:scale(1.05);
+}
+
+/* Big Heart */
+.big-heart{
+font-size:200px;
+animation: beat 1s infinite;
+margin-bottom:20px;
+}
+
+@keyframes beat{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SECTION 1 -->
+<div class="section">
+<h1>Only For Yuv ❤️</h1>
+<p>Before you scroll… just know this is made only for you.</p>
+<button onclick="scrollToSection()">Click To Start</button>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section fade" id="part2">
+<h1>Listen Carefully</h1>
+<p>
+You are not just my boyfriend.<br>
+You are my comfort.<br>
+My peace.<br>
+My safe place.
+</p>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section fade">
+<h1>No More Jealousy</h1>
+<p>
+There is no competition.<br>
+No second option.<br>
+No confusion.<br>
+I choose you. Every single day.
+</p>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section fade">
+<h1>One Question...</h1>
+<p>Will you forgive me now? ❤️</p>
+<button onclick="showFinal()">Yes, I Forgive You</button>
+</div>
+
+<!-- FINAL SECTION -->
+<div class="section" id="final" style="display:none;">
+<div class="big-heart">❤️</div>
+<h1>I Love You Yuv</h1>
+<p>
+Thank you for staying.<br>
+Thank you for loving me.<br>
+Thank you for choosing me.<br><br>
+I’m not going anywhere.
+</p>
+</div>
+
+<script>
+
+function scrollToSection(){
+window.scrollTo({
+top: window.innerHeight,
+behavior: "smooth"
+});
+}
+
+function showFinal(){
+document.getElementById("final").style.display="flex";
+window.scrollTo({
+top: document.body.scrollHeight,
+behavior:"smooth"
+});
+}
+
+/* Fade animation on scroll */
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+faders.forEach(el => {
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+el.classList.add('show');
+}
+});
+});
+
+</script>
+
+</body>
+</html>
